@@ -35,7 +35,21 @@ class _ProjectsPageState extends State<ProjectsPage> {
             child: ListTile(
               leading: const Icon(Icons.code),
               title: Text(projets[index]),
-              trailing: const Icon(Icons.edit),
+              trailing: IconButton(
+  icon: const Icon(Icons.edit),
+  onPressed: () {
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => EditorPage(
+          projet: projets[index],
+        ),
+      ),
+    );
+
+  },
+),
             ),
           );
         },
